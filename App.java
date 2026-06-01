@@ -5,10 +5,11 @@ public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        
-        Validaciones v = new Validaciones();
 
-       
+        GestionClientes gc = new GestionClientes();
+        GestionVehiculos gv = new GestionVehiculos();
+        GestionRenting gr = new GestionRenting();
+
         int op = 0;
 
         while (op != 5) {
@@ -20,29 +21,32 @@ public class App {
             System.out.println("4. Informe General");
             System.out.println("5. Salir");
 
+            op = sc.nextInt();
 
             switch (op) {
 
                 case 1:
-                    System.out.println("Saliendo del sistema...");
+                    gc.menuClientes();
                     break;
 
                 case 2:
-                    System.out.println("Saliendo del sistema...");
+                    gv.menuVehiculos();
                     break;
 
                 case 3:
-                    System.out.println("Saliendo del sistema...");
+                    gr.menuContratos();
                     break;
 
                 case 4:
-                    System.out.println("Saliendo del sistema...");
+                    System.out.println("Informe General");
                     break;
 
                 case 5:
                     System.out.println("Saliendo del sistema...");
                     break;
 
+                default:
+                    System.out.println("Opcion invalida");
             }
         }
     }
