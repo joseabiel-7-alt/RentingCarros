@@ -1,6 +1,6 @@
 import java.util.LinkedList;
-import java.util.Scanner;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class GestionVehiculos {
 
@@ -78,10 +78,7 @@ public class GestionVehiculos {
                         sb.append("---\n"); // Separador de registro
                     }
 
-                    Exportar e = new Exportar();
-                    System.out.println(e.exportar(sb.toString(), "Vehiculos.txt"));
-                    System.out.println("Saliendo...");
-                    break;
+                  
             }
         }
         return null;
