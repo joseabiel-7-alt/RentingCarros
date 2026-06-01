@@ -5,10 +5,12 @@ public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        Sistema sistema = new Sistema();
+        Validaciones v = new Validaciones();
 
-        GestionClientes gc = new GestionClientes();
-        GestionVehiculos gv = new GestionVehiculos();
-        GestionRenting gr = new GestionRenting();
+        GestionClientes gc = new GestionClientes(sistema);
+        GestionVehiculos gv = new GestionVehiculos(sistema);
+        GestionRenting gr = new GestionRenting(sistema);
 
         int op = 0;
 
@@ -21,32 +23,32 @@ public class App {
             System.out.println("4. Informe General");
             System.out.println("5. Salir");
 
-            op = sc.nextInt();
+            op = v.validarEntero("Seleccione una opcion: ", sc);
+            op = v.validarRango(1, 5, op, sc, "Seleccione una opcion: ");
 
             switch (op) {
 
                 case 1:
-                    gc.menuClientes();
+                    gc.menuClientes(sc);
                     break;
 
                 case 2:
-                    gv.menuVehiculos();
+                    gv.menuVehiculos(sc);
                     break;
 
                 case 3:
-                    gr.menuContratos();
+                    gr.menuContratos(sc);
                     break;
 
                 case 4:
-                    System.out.println("Informe General");
+                    System.out.println(sistema.informeGeneral());
+                    System.out.println(sistema.exportarTodo());
                     break;
 
                 case 5:
                     System.out.println("Saliendo del sistema...");
                     break;
 
-                default:
-                    System.out.println("Opcion invalida");
             }
         }
     }
