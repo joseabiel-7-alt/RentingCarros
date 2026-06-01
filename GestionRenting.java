@@ -2,8 +2,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.LinkedList;
-import java.util.Scanner;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class GestionRenting {
 
@@ -87,10 +87,7 @@ public class GestionRenting {
                         sb.append("---\n");
                     }
 
-                    Exportar e = new Exportar();
-                    System.out.println(e.exportar(sb.toString(), "Contratos.txt"));
-                    System.out.println("Saliendo...");
-                    break;
+                    
             }
         }
         return null;
